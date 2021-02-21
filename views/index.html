@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Usermanagement</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script> // verlinken la bibliothet de jquery
+    <script>var exports = { __esModule: true };</script> //export pour les modules doit etre possible
+    <script src="scripts/script.js"></script>
+
+</head>
+
+<body>
+
+<form action="/user" onsubmit="return validateUserData()" method="post" name="userForm">
+    <div class="container">
+        <h1>Usermanagement System</h1>
+        <p>Mit diesem Formular können Sie einen User erstellen</p>
+        <hr>
+
+        <label for="name"><b>Name</b></label>
+        <input type="text"
+               placeholder="Namen eingeben"
+               name="name"
+               class="formInput"
+               id="name"
+               required pattern="(\s*[a-zA-Z])+(\s*[a-zA-Z])*">
+
+        <label for="vorname"><b>Vorname</b></label>
+        <input type="text"
+               placeholder="Vornamen eingeben"
+               name="vorname"
+               id="vorname"
+               class="formInput"
+               required pattern="(\s*[a-zA-Z])+(\s*[a-zA-Z])*">
+
+        <label for="name"><b>Email</b></label>
+        <input type="email"
+               placeholder="Email eingeben"
+               name="email"
+               class="formInput"
+               id="email" required>
+
+        <label for="pwd"><b>Passwort</b></label>
+        <input type="password"  class="formInput" placeholder="Passwort eingeben" name="pwd" id="pwd" required>
+
+        <hr>
+
+        <button type="submit" class="addBtn" >Benutzer erstellen</button>
+    </div>
+
+</form>
+
+<div class="container">
+    <h1>Benutzerliste</h1>
+<table id="usersTable">
+    <tr>
+        <th>Name</th>
+        <th>Vorname</th>
+        <th>Email</th>
+    </tr>
+
+</table>
+</div>
+
+</body>
+
+</html>

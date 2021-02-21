@@ -1,0 +1,168 @@
+#Users hinzufügen
+POST http://localhost:5796/user
+Content-Type: application/json
+
+{
+  "name": "Pan",
+  "vorname": "Peter",
+  "email": "panpeter@gmail.com",
+  "pwd": "SamplePassword123456789"
+}
+
+###
+
+
+POST http://localhost:5796/user
+Content-Type: application/json
+
+{
+  "name": "Fischer",
+  "vorname": "Alexander",
+  "email": "fischeralexander@gmail.com",
+  "pwd": "SamplePassword123456789"
+}
+###
+
+POST http://localhost:5796/user
+Content-Type: application/json
+
+{
+  "name": "Ngnindjeu Sonfack",
+  "vorname": "Lovline Doriane",
+  "email": "lolodod@gmail.com",
+  "pwd": "AdminPasswordExpress9874563210"
+}
+###
+
+POST http://localhost:5796/user
+Content-Type: application/json
+
+{
+  "name": "Zamefack",
+  "vorname": "David",
+  "email": "zameur@gmail.com",
+  "pwd": "SecondaryAdmin5213647896"
+}
+###
+
+#Fehlerhafte Hinzufügen-Versuche
+POST http://localhost:5796/user
+Content-Type: application/json
+
+{
+  "name": "",
+  "vorname": "David",
+  "email": "zameur@gmail.com",
+  "pwd": "SecondaryAdmin5213647896"
+}
+###
+POST http://localhost:5796/user
+Content-Type: application/json
+
+{
+  "name": "Zamefack",
+  "vorname": "",
+  "email": "zameur@gmail.com",
+  "pwd": "SecondaryAdmin5213647896"
+}
+###
+
+POST http://localhost:5796/user
+Content-Type: application/json
+
+{
+  "name": "Zamefack",
+  "vorname": "David",
+  "pwd": "SecondaryAdmin5213647896"
+}
+###
+POST http://localhost:5796/user
+Content-Type: application/json
+
+{
+  "name": "Zamefack",
+  "vorname": "David",
+  "email": "zameur@gmail.com"
+}
+###
+
+#Zugriff auf einen Benutzer
+GET http://localhost:5796/user/1
+Accept: application/json
+
+###
+GET http://localhost:5796/user/2
+Accept: application/json
+
+###
+GET http://localhost:5796/user/3
+Accept: application/json
+
+###
+
+#Fehlerhafte Zugriffe auf User
+GET http://localhost:5796/user/0
+Accept: application/json
+
+###
+GET http://localhost:5796/user/-1
+Accept: application/json
+
+###
+
+GET http://localhost:5796/user/
+Accept: application/json
+
+###
+
+#Zugriff auf alle Benutzer
+GET http://localhost:5796/users
+Accept: application/json
+
+###
+
+
+#Benutzer aktualisieren
+POST http://localhost:5796/update
+Content-Type: application/json
+
+{
+  "name": "Ngnindjeu Sonfack",
+  "vorname": "Lovline Doriane",
+  "email": "dolfine@gmail.com",
+  "id": 3
+}
+###
+
+
+#Nicht vorhandener Benutzer aktualisieren
+POST http://localhost:5796/update
+Content-Type: application/json
+
+{
+  "name": "Ngnindjeu Sonfack",
+  "vorname": "Lovline Doriane",
+  "email": "dolfine@gmail.com",
+  "id": 6
+}
+###
+
+#Users Löschen
+DELETE http://localhost:5796/user/1
+Accept: application/json
+###
+DELETE http://localhost:5796/user/2
+Accept: application/json
+###
+
+#Löschen mit falschen Ids
+DELETE http://localhost:5796/user/10
+Accept: application/json
+###
+
+#Anzeige restlicher Benutzer
+GET http://localhost:5796/users
+Accept: application/json
+###
+
+
